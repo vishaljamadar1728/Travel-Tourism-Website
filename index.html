@@ -1,11 +1,329 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Travel & Tourism Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel & Tourism | Explore The World</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>Welcome to Travel & Tourism</h1>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Travel<span>Go</span>
+        </div>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#packages">Packages</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="login-btn">Login</button>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">EXPLORE • DISCOVER • TRAVEL</p>
+
+            <h1>
+                Discover Your Next
+                <span>Adventure</span>
+            </h1>
+
+            <p class="hero-text">
+                Explore beautiful destinations, discover amazing places
+                and create unforgettable memories with us.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#destinations" class="primary-btn">
+                    Explore Now
+                </a>
+
+                <a href="#packages" class="secondary-btn">
+                    View Packages
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DESTINATIONS ================= -->
+
+    <section class="section" id="destinations">
+
+        <div class="section-heading">
+
+            <p>POPULAR PLACES</p>
+
+            <h2>Explore Top Destinations</h2>
+
+            <span>
+                Discover some of the most beautiful places for your next trip.
+            </span>
+
+        </div>
+
+
+        <div class="destination-container">
+
+            <div class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80"
+                    alt="Taj Mahal">
+
+                <div class="card-content">
+                    <h3>Agra</h3>
+                    <p>Explore the beautiful Taj Mahal and experience India's rich history.</p>
+                    <a href="#">Explore →</a>
+                </div>
+
+            </div>
+
+
+            <div class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80"
+                    alt="Jaipur">
+
+                <div class="card-content">
+                    <h3>Jaipur</h3>
+                    <p>Discover royal palaces, forts and the colourful culture of Rajasthan.</p>
+                    <a href="#">Explore →</a>
+                </div>
+
+            </div>
+
+
+            <div class="destination-card">
+
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80"
+                    alt="Kerala">
+
+                <div class="card-content">
+                    <h3>Kerala</h3>
+                    <p>Enjoy peaceful backwaters, greenery and beautiful natural landscapes.</p>
+                    <a href="#">Explore →</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY CHOOSE US ================= -->
+
+    <section class="why-us" id="about">
+
+        <div class="section-heading">
+
+            <p>WHY TRAVELGO?</p>
+
+            <h2>Travel Made Simple</h2>
+
+            <span>
+                Everything you need to plan a memorable journey.
+            </span>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature-box">
+                <div class="feature-icon">🌍</div>
+                <h3>Beautiful Destinations</h3>
+                <p>
+                    Discover amazing destinations and exciting places to visit.
+                </p>
+            </div>
+
+
+            <div class="feature-box">
+                <div class="feature-icon">💰</div>
+                <h3>Affordable Packages</h3>
+                <p>
+                    Find travel packages suitable for different budgets.
+                </p>
+            </div>
+
+
+            <div class="feature-box">
+                <div class="feature-icon">🛡️</div>
+                <h3>Safe & Comfortable</h3>
+                <p>
+                    Enjoy a comfortable and memorable travel experience.
+                </p>
+            </div>
+
+
+            <div class="feature-box">
+                <div class="feature-icon">📞</div>
+                <h3>Easy Support</h3>
+                <p>
+                    Get helpful information and support whenever you need it.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PACKAGES ================= -->
+
+    <section class="section" id="packages">
+
+        <div class="section-heading">
+
+            <p>TRAVEL PACKAGES</p>
+
+            <h2>Choose Your Perfect Trip</h2>
+
+            <span>
+                Explore our popular travel packages.
+            </span>
+
+        </div>
+
+
+        <div class="package-container">
+
+            <div class="package-card">
+
+                <h3>Weekend Escape</h3>
+
+                <p class="package-price">₹4,999</p>
+
+                <p>2 Days / 1 Night</p>
+
+                <ul>
+                    <li>✓ Hotel Stay</li>
+                    <li>✓ Sightseeing</li>
+                    <li>✓ Breakfast</li>
+                </ul>
+
+                <button>View Details</button>
+
+            </div>
+
+
+            <div class="package-card popular">
+
+                <div class="popular-tag">POPULAR</div>
+
+                <h3>Royal Rajasthan</h3>
+
+                <p class="package-price">₹12,999</p>
+
+                <p>5 Days / 4 Nights</p>
+
+                <ul>
+                    <li>✓ Hotel Stay</li>
+                    <li>✓ Sightseeing</li>
+                    <li>✓ Breakfast</li>
+                </ul>
+
+                <button>View Details</button>
+
+            </div>
+
+
+            <div class="package-card">
+
+                <h3>Kerala Experience</h3>
+
+                <p class="package-price">₹15,999</p>
+
+                <p>6 Days / 5 Nights</p>
+
+                <ul>
+                    <li>✓ Hotel Stay</li>
+                    <li>✓ Sightseeing</li>
+                    <li>✓ Breakfast</li>
+                </ul>
+
+                <button>View Details</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <div>
+
+            <p>PLAN YOUR JOURNEY</p>
+
+            <h2>Ready to Explore?</h2>
+
+            <span>
+                Start planning your next unforgettable adventure today.
+            </span>
+
+        </div>
+
+        <button onclick="showMessage()">
+            Contact Us
+        </button>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Travel<span>Go</span>
+        </div>
+
+        <p>
+            Explore the world. Create memories. Travel more.
+        </p>
+
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#packages">Packages</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 TravelGo. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
