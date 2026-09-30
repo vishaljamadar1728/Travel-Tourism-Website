@@ -1,3 +1,5 @@
+/* ================= GENERAL ================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,116 +11,146 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #222;
     background: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
 /* ================= NAVBAR ================= */
 
 .navbar {
-    height: 75px;
-    padding: 0 7%;
+    width: 100%;
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-
+    padding: 0 7%;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
-    font-size: 27px;
+    font-size: 34px;
     font-weight: bold;
-    color: #087f8c;
+    color: #128c9e;
 }
 
-.logo span,
-.footer-logo span {
-    color: #f4a261;
+.logo span {
+    color: #f59e0b;
 }
+
+
+/* Home page navbar */
 
 .navbar nav {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: 30px;
 }
 
 .navbar nav a {
-    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
     color: #333;
-    font-size: 15px;
-    font-weight: 500;
+    transition: 0.3s;
 }
 
 .navbar nav a:hover,
-.navbar nav .active {
-    color: #087f8c;
+.navbar nav a.active {
+    color: #128c9e;
 }
 
+
+/* Destinations / Packages navbar */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #128c9e;
+}
+
+
 .login-btn {
-    padding: 10px 24px;
     border: none;
-    border-radius: 25px;
-    background: #087f8c;
+    background: #128c9e;
     color: white;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 14px;
 }
 
 .login-btn:hover {
-    background: #05636d;
+    background: #0c7180;
 }
 
 
 /* ================= HERO ================= */
 
 .hero {
-    min-height: 620px;
-
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.45),
-        rgba(0, 0, 0, 0.45)),
-        url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=85");
-
-    background-size: cover;
-    background-position: center;
-
+    min-height: 600px;
     display: flex;
     align-items: center;
-
     padding: 80px 8%;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-content {
-    max-width: 650px;
+    max-width: 700px;
     color: white;
 }
 
 .small-title {
     font-size: 14px;
     letter-spacing: 3px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: 58px;
+    font-size: 60px;
     line-height: 1.1;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 .hero h1 span {
-    color: #f4a261;
+    color: #f59e0b;
 }
 
 .hero-text {
     font-size: 18px;
     line-height: 1.7;
     margin-bottom: 30px;
-    max-width: 580px;
 }
 
 .hero-buttons {
@@ -128,63 +160,62 @@ body {
 
 .primary-btn,
 .secondary-btn {
-    padding: 13px 27px;
-    border-radius: 25px;
-    text-decoration: none;
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 6px;
     font-weight: bold;
 }
 
 .primary-btn {
-    background: #f4a261;
-    color: white;
-}
-
-.secondary-btn {
-    border: 2px solid white;
+    background: #128c9e;
     color: white;
 }
 
 .primary-btn:hover {
-    background: #e58d45;
+    background: #0c7180;
+}
+
+.secondary-btn {
+    background: white;
+    color: #128c9e;
 }
 
 .secondary-btn:hover {
-    background: white;
-    color: #333;
+    background: #f1f1f1;
 }
 
 
-/* ================= GENERAL SECTION ================= */
+/* ================= SECTIONS ================= */
 
 .section {
-    padding: 90px 7%;
+    padding: 80px 8%;
 }
 
 .section-heading {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .section-heading p {
-    color: #f4a261;
-    font-size: 13px;
+    color: #128c9e;
+    font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
 
 .section-heading h2 {
-    font-size: 36px;
+    font-size: 38px;
     margin-bottom: 12px;
 }
 
 .section-heading span {
-    color: #777;
+    color: #666;
     font-size: 16px;
 }
 
 
-/* ================= DESTINATIONS ================= */
+/* ================= DESTINATION CARDS ================= */
 
 .destination-container {
     display: grid;
@@ -194,14 +225,14 @@ body {
 
 .destination-card {
     background: white;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
     transition: 0.3s;
 }
 
 .destination-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
 }
 
 .destination-card img {
@@ -215,7 +246,7 @@ body {
 }
 
 .card-content h3 {
-    font-size: 23px;
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
@@ -226,8 +257,7 @@ body {
 }
 
 .card-content a {
-    color: #087f8c;
-    text-decoration: none;
+    color: #128c9e;
     font-weight: bold;
 }
 
@@ -235,26 +265,26 @@ body {
 /* ================= WHY US ================= */
 
 .why-us {
-    background: #f4f9f9;
-    padding: 90px 7%;
+    padding: 80px 8%;
+    background: #f5f9fa;
 }
 
 .features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .feature-box {
     background: white;
     text-align: center;
-    padding: 35px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .feature-icon {
-    font-size: 38px;
+    font-size: 40px;
     margin-bottom: 15px;
 }
 
@@ -278,59 +308,59 @@ body {
 
 .package-card {
     position: relative;
-    padding: 35px;
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
     text-align: center;
-    border-radius: 15px;
-    border: 1px solid #eee;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
 }
 
 .package-card h3 {
-    font-size: 23px;
+    font-size: 24px;
     margin-bottom: 15px;
 }
 
 .package-price {
-    color: #087f8c;
+    color: #128c9e;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.package-card > p:not(.package-price) {
-    color: #777;
-}
-
 .package-card ul {
     list-style: none;
-    text-align: left;
-    margin: 25px 0;
+    margin: 20px 0;
     line-height: 2;
     color: #555;
 }
 
 .package-card button {
-    padding: 11px 25px;
     border: none;
-    border-radius: 22px;
-    background: #087f8c;
+    background: #128c9e;
     color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 15px;
 }
 
-.popular {
-    border: 2px solid #f4a261;
+.package-card button:hover {
+    background: #0c7180;
+}
+
+.package-card.popular {
+    border: 2px solid #128c9e;
 }
 
 .popular-tag {
     position: absolute;
     top: 0;
-    right: 20px;
-    background: #f4a261;
+    right: 0;
+    background: #128c9e;
     color: white;
-    padding: 6px 12px;
-    border-radius: 0 0 8px 8px;
-    font-size: 11px;
+    padding: 7px 14px;
+    border-radius: 0 10px 0 10px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -338,79 +368,206 @@ body {
 /* ================= CONTACT ================= */
 
 .contact {
-    margin: 20px 7% 80px;
-    padding: 55px 7%;
-    border-radius: 20px;
-
-    background: #087f8c;
+    padding: 60px 8%;
+    background: #128c9e;
     color: white;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
 }
 
 .contact p {
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 10px;
 }
 
 .contact h2 {
-    font-size: 34px;
+    font-size: 35px;
     margin-bottom: 10px;
 }
 
 .contact span {
-    color: #d9f3f5;
+    color: #e5f7f9;
 }
 
 .contact button {
-    padding: 13px 28px;
+    background: white;
+    color: #128c9e;
     border: none;
-    border-radius: 25px;
-    background: #f4a261;
-    color: white;
-    cursor: pointer;
+    padding: 13px 28px;
+    border-radius: 6px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ================= PAGE HEADER ================= */
+
+.page-header {
+    text-align: center;
+    padding: 70px 20px 50px;
+    background: #f5f9fa;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+
+/* ================= DESTINATIONS PAGE ================= */
+
+.destinations-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 60px 8%;
+}
+
+.destinations-section .destination-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+}
+
+.destinations-section .destination-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.destination-info {
+    padding: 22px;
+}
+
+.destination-info h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.destination-info p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.destination-info span {
+    color: #128c9e;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ================= PACKAGES PAGE ================= */
+
+.packages-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 60px 8%;
+}
+
+.packages-section .package-card {
+    display: flex;
+    padding: 0;
+    text-align: left;
+    overflow: hidden;
+}
+
+.packages-section .package-card img {
+    width: 42%;
+    min-height: 280px;
+    object-fit: cover;
+}
+
+.package-info {
+    padding: 25px;
+}
+
+.package-info h2 {
+    margin-bottom: 10px;
+}
+
+.package-duration {
+    color: #128c9e !important;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.package-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.package-info h3 {
+    margin: 18px 0;
+    color: #128c9e;
+}
+
+.package-info button {
+    background: #128c9e;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.package-info button:hover {
+    background: #0c7180;
 }
 
 
 /* ================= FOOTER ================= */
 
 footer {
-    background: #152b2e;
+    background: #17252a;
     color: white;
     text-align: center;
-    padding: 50px 20px 25px;
+    padding: 45px 20px;
 }
 
 .footer-logo {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+}
+
+.footer-logo span {
+    color: #f59e0b;
 }
 
 footer > p {
-    color: #b8c8ca;
+    color: #bbb;
+    margin-bottom: 20px;
 }
 
 .footer-links {
-    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
 }
 
 .footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
+    color: #ddd;
 }
 
 .footer-links a:hover {
-    color: #f4a261;
+    color: #f59e0b;
 }
 
 .copyright {
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -418,50 +575,98 @@ footer > p {
 
 @media (max-width: 900px) {
 
-    .navbar nav {
-        display: none;
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar nav,
+    .nav-links {
+        gap: 15px;
     }
 
     .hero h1 {
         font-size: 45px;
     }
 
-    .destination-container,
-    .package-container {
-        grid-template-columns: 1fr;
+    .destination-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destinations-section {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .features {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .contact {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
+    .package-container {
+        grid-template-columns: 1fr;
+    }
+
+    .packages-section {
+        grid-template-columns: 1fr;
     }
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar nav,
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
     .hero {
-        min-height: 550px;
+        min-height: 500px;
     }
 
     .hero h1 {
         font-size: 38px;
     }
 
-    .hero-text {
-        font-size: 16px;
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .destination-container {
+        grid-template-columns: 1fr;
+    }
+
+    .destinations-section {
+        grid-template-columns: 1fr;
     }
 
     .features {
         grid-template-columns: 1fr;
     }
 
-    .section-heading h2 {
-        font-size: 30px;
+    .packages-section {
+        grid-template-columns: 1fr;
+    }
+
+    .packages-section .package-card {
+        display: block;
+    }
+
+    .packages-section .package-card img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .contact {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
     }
 }
