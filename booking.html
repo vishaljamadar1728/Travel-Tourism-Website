@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Your Trip - TravelGo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Travel<span>Go</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="packages.html">Packages</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="login.html" class="login-btn">Login</a>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <h1>Book Your Trip</h1>
+
+        <p>
+            Plan your next unforgettable journey with TravelGo
+        </p>
+
+    </section>
+
+
+    <!-- ================= BOOKING FORM ================= -->
+
+    <section class="contact-page">
+
+        <div class="contact-form">
+
+            <h2>Travel Booking Form</h2>
+
+            <form action="#" method="post">
+
+                <!-- Customer Name -->
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <!-- Email -->
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <!-- Phone -->
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+
+                <!-- Destination -->
+
+                <label>Select Destination</label>
+
+                <select name="destination" required>
+
+                    <option value="">Select Destination</option>
+
+                    <option value="Agra">Agra</option>
+
+                    <option value="Jaipur">Jaipur</option>
+
+                    <option value="Kerala">Kerala</option>
+
+                    <option value="Goa">Goa</option>
+
+                    <option value="Manali">Manali</option>
+
+                </select>
+
+
+                <!-- Package -->
+
+                <label>Select Package</label>
+
+                <select name="package" required>
+
+                    <option value="">Select Package</option>
+
+                    <option value="Weekend Escape">
+                        Weekend Escape - ₹4,999
+                    </option>
+
+                    <option value="Royal Rajasthan">
+                        Royal Rajasthan - ₹12,999
+                    </option>
+
+                    <option value="Kerala Experience">
+                        Kerala Experience - ₹15,999
+                    </option>
+
+                </select>
+
+
+                <!-- Travel Date -->
+
+                <label>Travel Date</label>
+
+                <input
+                    type="date"
+                    name="travel_date"
+                    required
+                >
+
+
+                <!-- Number of People -->
+
+                <label>Number of People</label>
+
+                <input
+                    type="number"
+                    name="people"
+                    min="1"
+                    max="20"
+                    placeholder="Enter number of people"
+                    required
+                >
+
+
+                <!-- Submit -->
+
+                <button type="submit">
+                    Book Now
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            Travel<span>Go</span>
+        </div>
+
+        <p>
+            Explore the world. Create memories. Travel more.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="destinations.html">Destinations</a>
+
+            <a href="packages.html">Packages</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 TravelGo. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
