@@ -1,4 +1,3 @@
-```php
 <?php
 
 error_reporting(E_ALL);
@@ -8,14 +7,26 @@ include "db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $name = $_POST["name"] ?? "";
-    $email = $_POST["email"] ?? "";
+    $name = trim($_POST["name"] ?? "");
+    $email = trim($_POST["email"] ?? "");
+    $phone = trim($_POST["phone"] ?? "");
     $password = $_POST["password"] ?? "";
     $confirm_password = $_POST["confirm_password"] ?? "";
 
     // Check required fields
-    if (empty($name) || empty($email) || empty($password) || empty($confirm_password)) {
+    if (
+        empty($name) ||
+        empty($email) ||
+        empty($phone) ||
+        empty($password) ||
+        empty($confirm_password)
+    ) {
         die("Please fill all fields.");
+    }
+
+    // Check email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Please enter a valid email address.");
     }
 
     // Check password confirmation
@@ -23,8 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Passwords do not match!");
     }
 
-    // Check if email already exists
-    $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    // Check whether email already exists
+    $check = $conn->prepare(
+        "SELECT id FROM users WHERE email = ?"
+    );
 
     if (!$check) {
         die("Database error: " . $conn->error);
@@ -39,49 +52,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $check->close();
         $conn->close();
 
-        echo "<h2>Email already registered!</h2>";
-        echo '<p><a href="signup.html">Go Back</a></p>';
-
-        exit();
+        die(
+            "Email already registered! " .
+            '<a href="signup.html">Try another email</a>'
+        );
     }
 
     $check->close();
 
-    // Hash password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    // Securely hash password
+    $hashed_password = password_hash(
+        $password,
+        PASSWORD_DEFAULT
+    );
 
-    // Insert user into database
+    // Save name, email, phone and password
     $stmt = $conn->prepare(
-        "INSERT INTO users (name, email, password) VALUES (?, ?, ?)"
+        "INSERT INTO users (name, email, phone, password)
+         VALUES (?, ?, ?, ?)"
     );
 
     if (!$stmt) {
         die("Database error: " . $conn->error);
     }
 
-    $stmt->bind_param("sss", $name, $email, $hashed_password);
+    $stmt->bind_param(
+        "ssss",
+        $name,
+        $email,
+        $phone,
+        $hashed_password
+    );
 
     if ($stmt->execute()) {
 
-        echo "<!DOCTYPE html>";
-        echo "<html>";
-        echo "<head>";
-        echo "<title>Registration Successful</title>";
-        echo "</head>";
-        echo "<body style='font-family: Arial; text-align: center; padding-top: 100px;'>";
-
         echo "<h1>Registration Successful!</h1>";
-        echo "<p>Welcome to TravelGo, " . htmlspecialchars($name) . ".</p>";
-        echo "<br>";
-        echo "<a href='login.html'>Go to Login</a>";
+        echo "<p>Welcome to TravelGo, "
+            . htmlspecialchars($name, ENT_QUOTES, 'UTF-8')
+            . ".</p>";
 
-        echo "</body>";
-        echo "</html>";
+        echo '<a href="login.html">Go to Login</a>';
 
     } else {
 
-        echo "<h2>Registration Failed!</h2>";
-        echo "<p>Error: " . $stmt->error . "</p>";
+        echo "Registration failed. Please try again.";
     }
 
     $stmt->close();
@@ -89,8 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 } else {
 
-    echo "<h2>Please submit the signup form.</h2>";
+    echo "Please submit the signup form.";
 }
 
 ?>
-```
