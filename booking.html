@@ -1,24 +1,18 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Book Your Trip - TravelGo</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
-
     <header class="navbar">
-
-        <div class="logo">
-            Travel<span>Go</span>
-        </div>
+        <div class="logo">Travel<span>Go</span></div>
 
         <nav>
             <a href="index.html">Home</a>
@@ -29,183 +23,126 @@
         </nav>
 
         <a href="login.html" class="login-btn">Login</a>
-
     </header>
 
-
-    <!-- ================= PAGE HEADER ================= -->
-
     <section class="page-header">
-
         <h1>Book Your Trip</h1>
-
-        <p>
-            Plan your next unforgettable journey with TravelGo
-        </p>
-
+        <p>Plan your next unforgettable journey with TravelGo</p>
     </section>
 
-
-    <!-- ================= BOOKING FORM ================= -->
-
     <section class="contact-page">
-
         <div class="contact-form">
 
             <h2>Travel Booking Form</h2>
 
-            <form action="#" method="post">
+            <form action="booking.php" method="POST">
 
-                <!-- Customer Name -->
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                    placeholder="Enter your full name" required>
 
-                <label>Full Name</label>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                    placeholder="Enter your email" required>
 
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your full name"
-                    required
-                >
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                    placeholder="Enter your phone number" required>
 
-
-                <!-- Email -->
-
-                <label>Email</label>
-
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    required
-                >
-
-
-                <!-- Phone -->
-
-                <label>Phone Number</label>
-
-                <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                    required
-                >
-
-
-                <!-- Destination -->
-
-                <label>Select Destination</label>
-
-                <select name="destination" required>
-
+                <label for="destination">Select Destination</label>
+                <select id="destination" name="destination" required>
                     <option value="">Select Destination</option>
-
                     <option value="Agra">Agra</option>
-
                     <option value="Jaipur">Jaipur</option>
-
                     <option value="Kerala">Kerala</option>
-
                     <option value="Goa">Goa</option>
-
                     <option value="Manali">Manali</option>
-
                 </select>
 
-
-                <!-- Package -->
-
-                <label>Select Package</label>
-
-                <select name="package" required>
-
+                <label for="package">Select Package</label>
+                <select id="package" name="package" required>
                     <option value="">Select Package</option>
-
-                    <option value="Weekend Escape">
-                        Weekend Escape - ₹4,999
-                    </option>
-
-                    <option value="Royal Rajasthan">
-                        Royal Rajasthan - ₹12,999
-                    </option>
-
-                    <option value="Kerala Experience">
-                        Kerala Experience - ₹15,999
-                    </option>
-
+                    <option value="Agra Weekend Escape">Agra Weekend Escape - ₹7,999</option>
+                    <option value="Royal Rajasthan">Royal Rajasthan - ₹14,999</option>
+                    <option value="Kerala Experience">Kerala Experience - ₹18,999</option>
+                    <option value="Manali Adventure">Manali Adventure - ₹15,999</option>
                 </select>
 
+                <label for="travel_date">Travel Date</label>
+                <input type="date" id="travel_date" name="travel_date" required>
 
-                <!-- Travel Date -->
+                <label for="people">Number of People</label>
+                <input type="number" id="people" name="people"
+                    min="1" max="20"
+                    placeholder="Enter number of people" required>
 
-                <label>Travel Date</label>
-
-                <input
-                    type="date"
-                    name="travel_date"
-                    required
-                >
-
-
-                <!-- Number of People -->
-
-                <label>Number of People</label>
-
-                <input
-                    type="number"
-                    name="people"
-                    min="1"
-                    max="20"
-                    placeholder="Enter number of people"
-                    required
-                >
-
-
-                <!-- Submit -->
-
-                <button type="submit">
-                    Book Now
-                </button>
+                <button type="submit">Book Now</button>
 
             </form>
-
         </div>
-
     </section>
 
-
-    <!-- ================= FOOTER ================= -->
-
     <footer>
-
-        <div class="footer-logo">
-            Travel<span>Go</span>
-        </div>
-
-        <p>
-            Explore the world. Create memories. Travel more.
-        </p>
+        <div class="footer-logo">Travel<span>Go</span></div>
+        <p>Explore the world. Create memories. Travel more.</p>
 
         <div class="footer-links">
-
             <a href="index.html">Home</a>
-
             <a href="destinations.html">Destinations</a>
-
             <a href="packages.html">Packages</a>
-
             <a href="about.html">About</a>
-
             <a href="contact.html">Contact</a>
-
         </div>
 
-        <p class="copyright">
-            © 2026 TravelGo. All Rights Reserved.
-        </p>
-
+        <p class="copyright">© 2026 TravelGo. All Rights Reserved.</p>
     </footer>
 
-</body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
 
+            const selectedPackage = params.get("package");
+            const selectedDestination = params.get("destination");
+
+            const packageSelect = document.getElementById("package");
+            const destinationSelect = document.getElementById("destination");
+            const travelDateInput = document.getElementById("travel_date");
+
+            if (selectedPackage && packageSelect) {
+                const matchingPackage = Array.from(packageSelect.options)
+                    .find(option =>
+                        option.value.trim().toLowerCase() ===
+                        selectedPackage.trim().toLowerCase()
+                    );
+
+                if (matchingPackage) {
+                    packageSelect.value = matchingPackage.value;
+                }
+            }
+
+            if (selectedDestination && destinationSelect) {
+                const matchingDestination = Array.from(destinationSelect.options)
+                    .find(option =>
+                        option.value.trim().toLowerCase() ===
+                        selectedDestination.trim().toLowerCase()
+                    );
+
+                if (matchingDestination) {
+                    destinationSelect.value = matchingDestination.value;
+                }
+            }
+
+            if (travelDateInput) {
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = String(today.getMonth() + 1).padStart(2, "0");
+                const day = String(today.getDate()).padStart(2, "0");
+
+                travelDateInput.min = `${year}-${month}-${day}`;
+            }
+        });
+    </script>
+
+</body>
 </html>
+```
